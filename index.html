@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Fixed layout at 1280px wide -->
+  <meta name="viewport" content="width=1280">
+  <title>Alexander Patterson Portfolio</title>
+  <!-- Google Fonts: Orbitron for a futuristic look -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Matter.js library from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Defer our main JS so DOM loads first -->
+  <script src="script.js" defer></script>
+</head>
+<body class="light-mode">
+  <!-- Header: Site title and navigation -->
+  <header>
+    <h1>Alexander Patterson</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#game">Guessing Game</a></li>
+        <li><a href="#plinko">Plinko Game</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle">Dark Mode</button>
+  </header>
+
+  <!-- Main content wrapper -->
+  <main>
+    <!-- Hero Section with Header Image -->
+    <section id="home" class="reveal-on-scroll">
+      <div class="hero-content">
+        <h2>Welcome to My Portfolio</h2>
+        <p>
+          I'm Alexander Patterson, a seasoned VP of Marketing and Technology, currently pursuing a Master's in Graphic Information Technology (Anticipated Graduation: December 2025). I have a passion for creating engaging and interactive web experiences that blend innovation, strategy, and user-centric design.
+        </p>
+      </div>
+    </section>
+
+ <!-- Services Section with Product Carousel -->
+ <section id="services" class="reveal-on-scroll">
+  <h2>Services</h2>
+  <div class="carousel-container">
+    <button class="carousel-button prev">&larr;</button>
+    <article class="product-card">
+      <img id="productImage" src="assets/webdevelopment.jpeg" alt="Web Development">
+      <h3 id="productName">Web Development</h3>
+      <p id="productDescription">
+        Building responsive, accessible, and visually stunning websites using modern technologies.<br>
+        <strong>Hourly Rate: $75/hr</strong>
+      </p>
+      <a href="#contact" class="product-button">Contact for More Information</a>
+    </article>
+    <button class="carousel-button next">&rarr;</button>
+  </div>
+</section>
+
+<!-- Guessing Game Section (Dynamic) -->
+<section id="game" class="reveal-on-scroll">
+  <h2>Fun Guessing Game</h2>
+  <p>Guess a number between 1 and 10:</p>
+  <input type="number" id="guessInput" min="1" max="10">
+  <button id="guessBtn">Submit Guess</button>
+  <p id="gameResult" class="fade-result"></p>
+</section>
+
+<!-- Plinko Game Section -->
+<section id="plinko" class="reveal-on-scroll">
+  <h2>Plinko Game</h2>
+  <figure id="plinkoContainer">
+    <canvas id="plinkoCanvas"></canvas>
+    <!-- Using an aside for basket labels -->
+    <aside id="basketLabels"></aside>
+    <figcaption>Click "Launch Ball" to drop a ball into a basket.</figcaption>
+  </figure>
+  <aside id="scoreBox">Score: 0</aside>
+  <button id="launchBall">Launch Ball</button>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact" class="reveal-on-scroll">
+  <h2>Contact Me</h2>
+  <form id="contactForm" novalidate>
+    <div class="form-group">
+      <label for="fullName">Full Name*</label>
+      <input type="text" id="fullName" required>
+      <span class="error" id="nameError"></span>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone">
+      <span class="error" id="phoneError"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email">
+      <span class="error" id="emailError"></span>
+    </div>
+    <div class="form-group">
+      <label for="comments">Comments*</label>
+      <textarea id="comments" required></textarea>
+      <span class="error" id="commentsError"></span>
+    </div>
+    <fieldset class="form-group">
+      <legend>Preferred Contact Method*</legend>
+      <label>
+        <input type="radio" name="contactMethod" value="phone" required> Phone
+      </label>
+      <label>
+        <input type="radio" name="contactMethod" value="email" required> Email
+      </label>
+      <span class="error" id="contactMethodError"></span>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="submissionMessage"></p>
+</section>
+</main>
+
+<!-- Footer Section -->
+<footer>
+<p>&copy; 2025 Alexander Patterson. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
